@@ -1,0 +1,210 @@
+{
+  "name": "@yaegassy/coc-mypy",
+  "version": "0.0.1",
+  "vscodeMypyVersion": "v2023.1.11721016",
+  "description": "microsoft/vscode-mypy’s langauge server extension for coc.nvim.",
+  "author": "yaegassy <yosstools@gmail.com>",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "keywords": [
+    "coc.nvim",
+    "python",
+    "python3",
+    "linting",
+    "mypy",
+    "coc-mypy",
+    "vim",
+    "neovim"
+  ],
+  "engines": {
+    "coc": "^0.0.80"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yaegassy/coc-mypy"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "lint": "eslint src --ext ts",
+    "clean": "rimraf lib",
+    "watch": "node esbuild.js --watch",
+    "build": "node esbuild.js",
+    "prepare": "node esbuild.js"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "printWidth": 120,
+    "semi": true
+  },
+  "devDependencies": {
+    "@types/node": "^18.16.18",
+    "@types/node-fetch": "^2.6.2",
+    "@types/rimraf": "^3.0.2",
+    "@types/which": "^2.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.60.0",
+    "@typescript-eslint/parser": "^5.60.0",
+    "coc.nvim": "^0.0.82",
+    "esbuild": "^0.16.17",
+    "eslint": "^8.43.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "extract-zip": "^2.0.1",
+    "https-proxy-agent": "^5.0.1",
+    "node-fetch": "^2.6.7",
+    "prettier": "^2.8.8",
+    "rimraf": "^3.0.2",
+    "typescript": "^5.0.4",
+    "which": "^3.0.0"
+  },
+  "activationEvents": [
+    "onLanguage:python"
+  ],
+  "contributes": {
+    "rootPatterns": [
+      {
+        "filetype": "python",
+        "patterns": [
+          "pyproject.toml",
+          "mypy.ini",
+          ".mypy.ini",
+          "setup.py",
+          "setup.cfg",
+          "tox.ini",
+          "Pipfile",
+          "requirements.txt"
+        ]
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "coc-mypy configuration",
+      "properties": {
+        "mypy-type-checker.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable coc-mypy extension."
+        },
+        "mypy-type-checker.useDmypy": {
+          "type": "boolean",
+          "default": false,
+          "description": "[Experimental]: Use dmypy deamon mode as the linting command run by microsoft/vscode-mypy's language server."
+        },
+        "mypy-type-checker.builtin.pythonPath": {
+          "type": "string",
+          "default": "",
+          "description": "Python 3.x path (Absolute path) to be used for built-in install."
+        },
+        "mypy-type-checker.showDocumantaion.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to display the code action for open the Mypy rule documentation web page included in the diagnostic information."
+        },
+        "mypy-type-checker.args": {
+          "default": [
+            "--follow-imports=skip"
+          ],
+          "markdownDescription": "Arguments passed in. Each argument is a separate string in the array.",
+          "items": {
+            "type": "string"
+          },
+          "scope": "resource",
+          "type": "array"
+        },
+        "mypy-type-checker.path": {
+          "default": [],
+          "markdownDescription": "When set to a path to `mypy` binary, extension will use that for linting. NOTE: Using this option may slowdown linting.",
+          "scope": "resource",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "mypy-type-checker.importStrategy": {
+          "default": "useBundled",
+          "markdownDescription": "Defines where `mypy` is imported from. This setting may be ignored if `mypy-type-checker.path` is set.",
+          "enum": [
+            "useBundled",
+            "fromEnvironment"
+          ],
+          "markdownEnumDescriptions": [
+            "Always use the bundled version of `mypy`.",
+            "Use `mypy` from environment, fallback to bundled version only if `mypy` not available in the environment."
+          ],
+          "scope": "window",
+          "type": "string"
+        },
+        "mypy-type-checker.interpreter": {
+          "default": [],
+          "markdownDescription": "When set to a path to python executable, extension will use that to launch the server and any subprocess.",
+          "scope": "resource",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "mypy-type-checker.severity": {
+          "default": {
+            "error": "Error",
+            "note": "Information"
+          },
+          "additionalProperties": {
+            "type": "string",
+            "enum": [
+              "Error",
+              "Hint",
+              "Information",
+              "Warning"
+            ]
+          },
+          "markdownDescription": "Mapping from severity of `mypy` message type to severity shown in problem window.",
+          "scope": "resource",
+          "type": "object"
+        },
+        "mypy-type-checker.showNotifications": {
+          "default": "off",
+          "markdownDescription": "Controls when notifications are shown by this extension.",
+          "enum": [
+            "off",
+            "onError",
+            "onWarning",
+            "always"
+          ],
+          "markdownEnumDescriptions": [
+            "All notifications are turned off, any errors or warning are still available in the logs.",
+            "Notifications are shown only in the case of an error.",
+            "Notifications are shown for errors and warnings.",
+            "Notifications are show for anything that the server chooses to show."
+          ],
+          "scope": "machine",
+          "type": "string"
+        },
+        "mypy-type-checker.trace.server": {
+          "type": "string",
+          "enum": [
+            "off",
+            "messages",
+            "verbose"
+          ],
+          "default": "off",
+          "description": "Traces the communication between coc.nvim and the language server."
+        }
+      }
+    },
+    "commands": [
+      {
+        "title": "Restart Server",
+        "command": "mypy-type-checker.restart"
+      },
+      {
+        "title": "Install Server",
+        "command": "mypy-type-checker.installServer"
+      },
+      {
+        "title": "Show output channel",
+        "command": "mypy-type-checker.showOutput"
+      }
+    ]
+  }
+}
