@@ -30,26 +30,28 @@ To use the built-in installation feature, execute the following command.
 
 ## Note
 
-### Initial Diagnostic Display
+### Use "dmypy" or "mypy"
+
+The `microsoft/vscode-mypy language server` uses `dmypy` by default. If you want to use `mypy`, set `mypy-type-checker.useDmypy` to `false`.
+
+**coc-settings.json**:
+
+```jsonc
+{
+  "mypy-type-checker.useDmypy": false
+}
+```
+
+### Initial Diagnostic Display (use mypy)
 
 The `mypy` command takes time to complete execution if the cache file for `mypy` does not exist. In other words, the first time it is executed, it takes time.
 
 The same is true if you are using a language server, so it will take some time to display the initial diagnostics.
 
-### [Warning] Known issues when using `dmypy` daemon mode
-
-The current default for `microsoft/vscode-mypy's langauge server` is to use `dmypy`, but `coc-mypy` uses `mypy`.
-
-It is possible to use `dmypy` in `coc-mypy` as well by setting `mypy-type-checker.useDmypy` to `true`.
-
-However, if `coc-mypy` is using `dmypy`, there is a problem that the `dmypy` daemon process remains after exiting Vim/Neovim...
-
-The `dmypy` process is located in the OS temporary directory and can be released by rebooting the OS. Alternatively, you can find the `dmypy` process yourself and kill it.
-
 ## Configuration options
 
 - `mypy-type-checker.enable`: Enable coc-mypy extension, default: `true`
-- `mypy-type-checker.useDmypy`: [Experimental]: Use dmypy deamon mode as the linting command run by microsoft/vscode-mypy's language server, default: `false`
+- `mypy-type-checker.useDmypy`: Use dmypy deamon mode as the linting command run by microsoft/vscode-mypy's language server, default: `true`
 - `mypy-type-checker.builtin.pythonPath`: Python 3.x path (Absolute path) to be used for built-in install, default: `""`
 - `mypy-type-checker.showDocumantaion.enable`: Whether to display the code action for open the Mypy rule documentation web page included in the diagnostic information, default: `true`
 
