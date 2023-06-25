@@ -33,7 +33,7 @@ type ImportStrategy = 'fromEnvironment' | 'useBundled';
 type Severity = 'Error' | 'Hint' | 'Information' | 'Warning';
 type ShowNotifications = 'off' | 'onError' | 'onWarning' | 'always';
 
-type MypyLspInitializationOptions = {
+type ExtensionInitializationOptions = {
   globalSettings: {
     args: string[];
     path: string[];
@@ -47,7 +47,7 @@ type MypyLspInitializationOptions = {
 function convertFromWorkspaceConfigToInitializationOptions() {
   const settings = workspace.getConfiguration(EXTENSION_NS);
 
-  const initializationOptions = <MypyLspInitializationOptions>{
+  const initializationOptions = <ExtensionInitializationOptions>{
     globalSettings: {
       args: settings.get('args'),
       path: settings.get('path'),
@@ -67,15 +67,11 @@ function getInitializationOptions(context: ExtensionContext) {
 
   // **MEMO**:
   //
-  // The current default for microsoft/vscode-mypy's langauge server is to use
-  // dmypy. However, there seems to be a problem with using dmypy with coc-mypy,
-  // where the daemon process remains after exiting Vim/Neovim...
+  // The current default for microsoft/vscode-mypy's langauge server is to use dmypy.
   //
   // microsoft/vscode-mypy's langauge server uses mypy by specifying the mypy
   // command path in the `mypy-type-checker.path` configuration.
-  //
-  // In coc-mypy, the mypy command is adjusted to be used by default.
-  if (!workspace.getConfiguration(EXTENSION_NS).get<boolean>('useDmypy', false)) {
+  if (!workspace.getConfiguration(EXTENSION_NS).get<boolean>('useDmypy', true)) {
     if (initializationOptions.globalSettings.path.length === 0) {
       const envMypyCommandPath = which.sync('mypy', { nothrow: true });
       if (envMypyCommandPath) {

@@ -38,6 +38,29 @@ export async function activate(context: ExtensionContext): Promise<void> {
   restartCommandFeature.register(context, client);
   showOutputCommandFeature.register(context, client);
   showDocumentationCodeActionFeature.register(context, client);
+
+  // **MEMO**:
+  //
+  // The language server of microsoft/vscode-mypy terminates the dmypy process
+  // when the language server is stopped.
+  // https://github.com/microsoft/vscode-mypy/blob/87491cf9576c9c9f428ca6468cdc448b94a08f32/bundled/tool/lsp_server.py#L285-L291
+  //
+  // Unfortunately, "deactivate" by coc.nvim does not address this issue and
+  // the dmypy process remains...
+  //
+  // To handle this, we directly set the VimLeavePre event to terminate the
+  // language server
+  if (workspace.getConfiguration(EXTENSION_NS).get<boolean>('useDmypy', true)) {
+    workspace.registerAutocmd({
+      event: 'VimLeavePre',
+      request: true,
+      callback: async () => {
+        if (client) {
+          await client.stop();
+        }
+      },
+    });
+  }
 }
 
 export async function deactivate(): Promise<void> {

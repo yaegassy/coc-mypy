@@ -88,8 +88,8 @@
         },
         "mypy-type-checker.useDmypy": {
           "type": "boolean",
-          "default": false,
-          "description": "[Experimental]: Use dmypy deamon mode as the linting command run by microsoft/vscode-mypy's language server."
+          "default": true,
+          "description": "Use dmypy deamon mode as the linting command run by microsoft/vscode-mypy's language server."
         },
         "mypy-type-checker.builtin.pythonPath": {
           "type": "string",
