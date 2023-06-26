@@ -6,12 +6,12 @@ import { getMypyLspMypyPath, getMypyLspPythonPath, getMypyLspServerPath } from '
 import { EXTENSION_NS } from './constant';
 
 export function createLanguageClient(context: ExtensionContext) {
-  const mypyLspPythonCommandPathcommand = getMypyLspPythonPath(context);
+  const mypyLspPythonCommandPath = getMypyLspPythonPath(context);
   const mypyLspServerScriptPath = getMypyLspServerPath(context);
-  if (!mypyLspPythonCommandPathcommand || !mypyLspServerScriptPath) return;
+  if (!mypyLspPythonCommandPath || !mypyLspServerScriptPath) return;
 
   const serverOptions: ServerOptions = {
-    command: mypyLspPythonCommandPathcommand,
+    command: mypyLspPythonCommandPath,
     args: [mypyLspServerScriptPath],
   };
 
