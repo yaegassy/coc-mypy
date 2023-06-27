@@ -27,6 +27,8 @@
     "access": "public"
   },
   "scripts": {
+    "tags-get": "curl -o resources/vscode-mypy-tags.json https://api.github.com/repos/microsoft/vscode-mypy/tags",
+    "tags-check": "node scripts/upstream-tags-check.mjs",
     "lint": "eslint src --ext ts",
     "clean": "rimraf lib",
     "watch": "node esbuild.js --watch",
