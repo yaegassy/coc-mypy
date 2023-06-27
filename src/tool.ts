@@ -6,7 +6,23 @@ import which from 'which';
 
 import { EXTENSION_NS } from './constant';
 
-export function getPythonPath(): string {
+export function getPythonEnvPath(): string {
+  let pythonPath = '';
+
+  pythonPath = which.sync('python3', { nothrow: true }) || '';
+  if (pythonPath) {
+    return pythonPath;
+  }
+
+  pythonPath = which.sync('python', { nothrow: true }) || '';
+  if (pythonPath) {
+    return pythonPath;
+  }
+
+  return pythonPath;
+}
+
+export function getPythonBultinInstallPath(): string {
   let pythonPath = workspace.getConfiguration(EXTENSION_NS).get<string>('builtin.pythonPath', '');
   if (pythonPath) {
     return pythonPath;

@@ -12,7 +12,7 @@ import stream from 'stream';
 import util from 'util';
 
 import { EXTENSION_NS, UPSTREAM_NAME, VSCODE_MYPY_VERSION } from '../constant';
-import { getPythonPath } from '../tool';
+import { getPythonBultinInstallPath } from '../tool';
 
 const pipeline = util.promisify(stream.pipeline);
 const agent = process.env.https_proxy ? new HttpsProxyAgent(process.env.https_proxy as string) : null;
@@ -34,7 +34,7 @@ function handleInstallServer(context: ExtensionContext, client?: LanguageClient)
         await client.stop();
       }
 
-      const pythonCommand = getPythonPath();
+      const pythonCommand = getPythonBultinInstallPath();
 
       await doDownload(context).catch(() => {});
       await doExtract(context).catch(() => {});

@@ -2,8 +2,8 @@ import { ExtensionContext, LanguageClient, LanguageClientOptions, ServerOptions,
 
 import which from 'which';
 
-import { getMypyLspMypyPath, getMypyLspPythonPath, getMypyLspServerPath } from './tool';
 import { EXTENSION_NS } from './constant';
+import { getMypyLspMypyPath, getMypyLspPythonPath, getMypyLspServerPath, getPythonEnvPath } from './tool';
 
 export function createLanguageClient(context: ExtensionContext) {
   const mypyLspPythonCommandPath = getMypyLspPythonPath(context);
@@ -64,6 +64,16 @@ function convertFromWorkspaceConfigToInitializationOptions() {
 
 function getInitializationOptions(context: ExtensionContext) {
   const initializationOptions = convertFromWorkspaceConfigToInitializationOptions();
+
+  // **MEMO**:
+  //
+  // If interpreter is not set, get the current python path and set it. If the
+  // necessary tools are installed in the virtual environment, they will be
+  // respected
+  if (workspace.getConfiguration(EXTENSION_NS).get<string[]>('interpreter', []).length === 0) {
+    const pythonPath = getPythonEnvPath();
+    initializationOptions.globalSettings.interpreter = [pythonPath];
+  }
 
   // **MEMO**:
   //
