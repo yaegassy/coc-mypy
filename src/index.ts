@@ -23,7 +23,7 @@ export async function activate(context: ExtensionContext): Promise<void> {
   const mypyLspMypyCommandPath = getMypyLspMypyPath(context);
 
   if (!mypyLspMypyCommandPath) {
-    installServerCommandFeature.register(context);
+    installServerCommandFeature.register(context, client);
     window.showWarningMessage(
       `coc-mypy | mypy language server does not exist. please execute ":CocCommand ${EXTENSION_NS}.installServer"`
     );
@@ -34,7 +34,7 @@ export async function activate(context: ExtensionContext): Promise<void> {
   if (!client) return;
   context.subscriptions.push(services.registLanguageClient(client));
 
-  installServerCommandFeature.register(context);
+  installServerCommandFeature.register(context, client);
   restartCommandFeature.register(context, client);
   showOutputCommandFeature.register(context, client);
   showDocumentationCodeActionFeature.register(context, client);

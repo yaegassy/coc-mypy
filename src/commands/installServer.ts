@@ -1,4 +1,4 @@
-import { commands, ExtensionContext, window } from 'coc.nvim';
+import { commands, ExtensionContext, LanguageClient, window } from 'coc.nvim';
 
 import child_process from 'child_process';
 import { randomBytes } from 'crypto';
@@ -18,16 +18,22 @@ const pipeline = util.promisify(stream.pipeline);
 const agent = process.env.https_proxy ? new HttpsProxyAgent(process.env.https_proxy as string) : null;
 const exec = util.promisify(child_process.exec);
 
-export function register(context: ExtensionContext) {
-  context.subscriptions.push(commands.registerCommand(`${EXTENSION_NS}.installServer`, handleInstallServer(context)));
+export function register(context: ExtensionContext, client?: LanguageClient) {
+  context.subscriptions.push(
+    commands.registerCommand(`${EXTENSION_NS}.installServer`, handleInstallServer(context, client))
+  );
 }
 
-function handleInstallServer(context: ExtensionContext) {
+function handleInstallServer(context: ExtensionContext, client?: LanguageClient) {
   return async () => {
     const msg = `Install/Upgrade ${UPSTREAM_NAME}'s language server?`;
 
     const ret = await window.showPrompt(msg);
     if (ret) {
+      if (client) {
+        await client.stop();
+      }
+
       const pythonCommand = getPythonPath();
 
       await doDownload(context).catch(() => {});
