@@ -42,7 +42,11 @@ The `microsoft/vscode-mypy language server` uses `dmypy` by default. If you want
 }
 ```
 
-### Initial Diagnostic Display (use mypy)
+### [Use dmypy] Vim/Neovim will exit a little slower
+
+If you are using `dmypy`, the process of killing the dmypy process is included when Vim/Neovim exits. This may slow down the Vim/Neovim exit process slightly.
+
+### [Use mypy] Initial Diagnostic Display
 
 The `mypy` command takes time to complete execution if the cache file for `mypy` does not exist. In other words, the first time it is executed, it takes time.
 
