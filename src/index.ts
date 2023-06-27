@@ -6,9 +6,9 @@ import { createLanguageClient } from './client';
 import * as installServerCommandFeature from './commands/installServer';
 import * as restartCommandFeature from './commands/restart';
 import * as showOutputCommandFeature from './commands/showOutput';
+import { EXTENSION_NS } from './constant';
 import * as showDocumentationCodeActionFeature from './features/showDocumentation';
 import { getMypyLspMypyPath } from './tool';
-import { EXTENSION_NS } from './constant';
 
 let client: LanguageClient | undefined;
 
