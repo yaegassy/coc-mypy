@@ -1,5 +1,15 @@
 [
   {
+    "name": "v2023.1.11781017",
+    "zipball_url": "https://api.github.com/repos/microsoft/vscode-mypy/zipball/refs/tags/v2023.1.11781017",
+    "tarball_url": "https://api.github.com/repos/microsoft/vscode-mypy/tarball/refs/tags/v2023.1.11781017",
+    "commit": {
+      "sha": "8d569831ec49b2d19b295930026f57f9891a4b9f",
+      "url": "https://api.github.com/repos/microsoft/vscode-mypy/commits/8d569831ec49b2d19b295930026f57f9891a4b9f"
+    },
+    "node_id": "REF_kwDOJKkcQLpyZWZzL3RhZ3MvdjIwMjMuMS4xMTc4MTAxNw"
+  },
+  {
     "name": "v2023.1.11771007",
     "zipball_url": "https://api.github.com/repos/microsoft/vscode-mypy/zipball/refs/tags/v2023.1.11771007",
     "tarball_url": "https://api.github.com/repos/microsoft/vscode-mypy/tarball/refs/tags/v2023.1.11771007",
