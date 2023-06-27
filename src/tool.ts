@@ -3,6 +3,10 @@ import { ExtensionContext, workspace } from 'coc.nvim';
 import fs from 'fs';
 import path from 'path';
 import which from 'which';
+import child_process from 'child_process';
+import util from 'util';
+
+const exec = util.promisify(child_process.exec);
 
 import { EXTENSION_NS } from './constant';
 
@@ -41,6 +45,16 @@ export function getPythonBultinInstallPath(): string {
   }
 
   return pythonPath;
+}
+
+export async function existsPythonImportModule(pythonPath: string, moduleName: string): Promise<boolean> {
+  const checkCmd = `${pythonPath} -c "import ${moduleName}"`;
+  try {
+    await exec(checkCmd);
+    return true;
+  } catch (error) {
+    return false;
+  }
 }
 
 export function getMypyLspMypyPath(context: ExtensionContext) {

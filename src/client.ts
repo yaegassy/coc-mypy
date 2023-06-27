@@ -3,9 +3,15 @@ import { ExtensionContext, LanguageClient, LanguageClientOptions, ServerOptions,
 import which from 'which';
 
 import { EXTENSION_NS } from './constant';
-import { getMypyLspMypyPath, getMypyLspPythonPath, getMypyLspServerPath, getPythonEnvPath } from './tool';
+import {
+  existsPythonImportModule,
+  getMypyLspMypyPath,
+  getMypyLspPythonPath,
+  getMypyLspServerPath,
+  getPythonEnvPath,
+} from './tool';
 
-export function createLanguageClient(context: ExtensionContext) {
+export async function createLanguageClient(context: ExtensionContext) {
   const mypyLspPythonCommandPath = getMypyLspPythonPath(context);
   const mypyLspServerScriptPath = getMypyLspServerPath(context);
   if (!mypyLspPythonCommandPath || !mypyLspServerScriptPath) return;
@@ -15,7 +21,7 @@ export function createLanguageClient(context: ExtensionContext) {
     args: [mypyLspServerScriptPath],
   };
 
-  const initializationOptions = getInitializationOptions(context);
+  const initializationOptions = await getInitializationOptions(context);
 
   const clientOptions: LanguageClientOptions = {
     synchronize: {
@@ -62,7 +68,7 @@ function convertFromWorkspaceConfigToInitializationOptions() {
   return initializationOptions;
 }
 
-function getInitializationOptions(context: ExtensionContext) {
+async function getInitializationOptions(context: ExtensionContext) {
   const initializationOptions = convertFromWorkspaceConfigToInitializationOptions();
 
   // **MEMO**:
@@ -72,7 +78,10 @@ function getInitializationOptions(context: ExtensionContext) {
   // respected
   if (workspace.getConfiguration(EXTENSION_NS).get<string[]>('interpreter', []).length === 0) {
     const pythonPath = getPythonEnvPath();
-    initializationOptions.globalSettings.interpreter = [pythonPath];
+    const existsMypyModule = await existsPythonImportModule(pythonPath, 'mypy');
+    if (existsMypyModule) {
+      initializationOptions.globalSettings.interpreter = [pythonPath];
+    }
   }
 
   // **MEMO**:
@@ -81,7 +90,7 @@ function getInitializationOptions(context: ExtensionContext) {
   //
   // microsoft/vscode-mypy's langauge server uses mypy by specifying the mypy
   // command path in the `mypy-type-checker.path` configuration.
-  if (!workspace.getConfiguration(EXTENSION_NS).get<boolean>('useDmypy', true)) {
+  if (!workspace.getConfiguration(EXTENSION_NS).get('useDmypy')) {
     if (initializationOptions.globalSettings.path.length === 0) {
       const envMypyCommandPath = which.sync('mypy', { nothrow: true });
       if (envMypyCommandPath) {
