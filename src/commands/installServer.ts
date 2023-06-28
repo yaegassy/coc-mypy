@@ -109,6 +109,10 @@ async function doExtract(context: ExtensionContext) {
     const extractedBaseDirName = extractedFilenames[0];
     const extractedBasePath = path.join(context.storagePath, extractedBaseDirName);
 
+    // Add text file for tag version identification
+    const versionTxtFilePath = path.join(extractedBasePath, 'version.txt');
+    fs.writeFileSync(versionTxtFilePath, `tag: ${VSCODE_MYPY_VERSION}`);
+
     fs.renameSync(extractedBasePath, targetPath);
     rimraf.sync(zipPath);
   }

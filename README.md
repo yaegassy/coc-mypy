@@ -67,6 +67,7 @@ Other settings have the same configuration as [microsoft/vscode-mypy](https://gi
 - `mypy-type-checker.restart`: Restart Server
 - `mypy-type-checker.installServer`: Install Server
 - `mypy-type-checker.showOutput`: Show output channel
+- `mypy-type-checker.version`: Show the version of the server installed by the extension
 
 ## Thanks
 

@@ -206,6 +206,10 @@
       {
         "title": "Show output channel",
         "command": "mypy-type-checker.showOutput"
+      },
+      {
+        "title": "Show the version of the server installed by the extension",
+        "command": "mypy-type-checker.version"
       }
     ]
   }
