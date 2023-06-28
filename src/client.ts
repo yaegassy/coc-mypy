@@ -6,19 +6,26 @@ import { EXTENSION_NS } from './constant';
 import {
   existsPythonImportModule,
   getMypyLspMypyPath,
-  getMypyLspPythonPath,
-  getMypyLspServerPath,
+  getMypyLspServerInterpreterPath,
+  getMypyLspServerScriptPath,
   getPythonEnvPath,
 } from './tool';
 
 export async function createLanguageClient(context: ExtensionContext) {
-  const mypyLspPythonCommandPath = getMypyLspPythonPath(context);
-  const mypyLspServerScriptPath = getMypyLspServerPath(context);
-  if (!mypyLspPythonCommandPath || !mypyLspServerScriptPath) return;
+  const devServerInterpreter = workspace.expand(
+    workspace.getConfiguration(EXTENSION_NS).get<string>('dev.serverInterpreter', '')
+  );
+  const devServerScript = workspace.expand(
+    workspace.getConfiguration(EXTENSION_NS).get<string>('dev.serverScript', '')
+  );
+
+  const serverInterpreter = devServerInterpreter ? devServerInterpreter : getMypyLspServerInterpreterPath(context);
+  const serverScript = devServerScript ? devServerScript : getMypyLspServerScriptPath(context);
+  if (!serverInterpreter || !serverScript) return;
 
   const serverOptions: ServerOptions = {
-    command: mypyLspPythonCommandPath,
-    args: [mypyLspServerScriptPath],
+    command: serverInterpreter,
+    args: [serverScript],
   };
 
   const initializationOptions = await getInitializationOptions(context);

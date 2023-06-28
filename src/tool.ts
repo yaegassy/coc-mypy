@@ -74,7 +74,7 @@ export function getMypyLspMypyPath(context: ExtensionContext) {
   return toolPath;
 }
 
-export function getMypyLspPythonPath(context: ExtensionContext) {
+export function getMypyLspServerInterpreterPath(context: ExtensionContext) {
   let pythonCommandPath: string | undefined = undefined;
 
   if (
@@ -91,7 +91,7 @@ export function getMypyLspPythonPath(context: ExtensionContext) {
   return pythonCommandPath;
 }
 
-export function getMypyLspServerPath(context: ExtensionContext) {
+export function getMypyLspServerScriptPath(context: ExtensionContext) {
   let serverScriptPath: string | undefined = undefined;
 
   if (fs.existsSync(path.join(context.storagePath, 'vscode-mypy', 'bundled', 'tool', 'lsp_server.py'))) {

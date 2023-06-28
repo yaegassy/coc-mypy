@@ -103,6 +103,16 @@
           "default": true,
           "description": "Whether to display the code action for open the Mypy rule documentation web page included in the diagnostic information."
         },
+        "mypy-type-checker.dev.serverInterpreter": {
+          "type": "string",
+          "default": "",
+          "markdownDescription": "(DEV) Set the python interpreter where the server is installed."
+        },
+        "mypy-type-checker.dev.serverScript": {
+          "type": "string",
+          "default": "",
+          "markdownDescription": "(DEV) Set server script path."
+        },
         "mypy-type-checker.args": {
           "default": [
             "--follow-imports=skip"
