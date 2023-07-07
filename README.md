@@ -6,7 +6,9 @@
 
 **CocInstall**:
 
-> TODO
+```
+:CocInstall @yaegassy/coc-mypy
+```
 
 **When using a plugin manager, etc**:
 
