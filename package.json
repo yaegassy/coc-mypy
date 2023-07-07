@@ -1,6 +1,6 @@
 {
   "name": "@yaegassy/coc-mypy",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "vscodeMypyVersion": "2023.1.0",
   "description": "microsoft/vscode-mypy’s langauge server extension for coc.nvim.",
   "author": "yaegassy <yosstools@gmail.com>",
