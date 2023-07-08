@@ -115,7 +115,7 @@
         },
         "mypy-type-checker.args": {
           "default": [
-            "--follow-imports=normal"
+            "--follow-imports=skip"
           ],
           "markdownDescription": "Arguments passed in. Each argument is a separate string in the array.",
           "items": {
