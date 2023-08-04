@@ -132,7 +132,7 @@ async function doInstall(pythonCommand: string, context: ExtensionContext): Prom
   statusItem.show();
 
   const installCmd =
-    `"${pythonCommand}" -m venv ${pathVenv} && ` + `${pathVenvPython} -m pip install -U pip -r ${requirementsTxtPath}`;
+    `"${pythonCommand}" -m venv ${pathVenv} && ` + `${pathVenvPython} -m pip install -r ${requirementsTxtPath}`;
 
   rimraf.sync(pathVenv);
   try {
