@@ -114,9 +114,7 @@
           "markdownDescription": "(DEV) Set server script path."
         },
         "mypy-type-checker.args": {
-          "default": [
-            "--follow-imports=skip"
-          ],
+          "default": [],
           "markdownDescription": "Arguments passed in. Each argument is a separate string in the array.",
           "items": {
             "type": "string"
