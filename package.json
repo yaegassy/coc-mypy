@@ -154,6 +154,26 @@
           },
           "type": "array"
         },
+        "mypy-type-checker.preferDaemon": {
+          "default": true,
+          "markdownDescription": "When set to true, `dmypy` is preferred over `mypy`; otherwise, `mypy` is preferred. This setting will be overridden if `mypy-type-checker.path` is set. NOTE: Setting this option to false may slowdown linting.",
+          "scope": "resource",
+          "type": "boolean"
+        },
+        "mypy-type-checker.reportingScope": {
+          "default": "file",
+          "markdownDescription": "Defines the scope of the problems reported by the extension.",
+          "enum": [
+            "file",
+            "workspace"
+          ],
+          "markdownEnumDescriptions": [
+            "Problems are reported for the files open in the editor only.",
+            "Problems are reported for files in the workspace."
+          ],
+          "scope": "resource",
+          "type": "string"
+        },
         "mypy-type-checker.severity": {
           "default": {
             "error": "Error",

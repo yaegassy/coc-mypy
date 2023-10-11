@@ -42,20 +42,24 @@ export async function createLanguageClient(context: ExtensionContext) {
   return client;
 }
 
-type ImportStrategy = 'fromEnvironment' | 'useBundled';
-type Severity = 'Error' | 'Hint' | 'Information' | 'Warning';
-type ShowNotifications = 'off' | 'onError' | 'onWarning' | 'always';
+const DEFAULT_SEVERITY: Record<string, string> = {
+  error: 'Error',
+  note: 'Information',
+};
 
 type ExtensionInitializationOptions = {
   globalSettings: {
     cwd: string;
     workspace: string;
     args: string[];
+    severity: Record<string, string>;
     path: string[];
-    importStrategy: ImportStrategy;
     interpreter: string[];
-    severity: Severity;
-    showNotifications: ShowNotifications;
+    importStrategy: string;
+    showNotifications: string;
+    extraPaths: string[];
+    reportingScope: string;
+    preferDaemon: boolean;
   };
 };
 
@@ -67,11 +71,15 @@ function convertFromWorkspaceConfigToInitializationOptions() {
       cwd: workspace.root,
       workspace: Uri.parse(workspace.root).toString(),
       args: settings.get('args'),
+      severity: settings.get<Record<string, string>>('severity', DEFAULT_SEVERITY),
       path: settings.get('path'),
-      importStrategy: settings.get<ImportStrategy>(`importStrategy`) ?? 'fromEnvironment',
       interpreter: settings.get('interpreter'),
-      severity: settings.get<Severity>('severity'),
-      showNotifications: settings.get<ShowNotifications>('showNotifications'),
+      //importStrategy: settings.get<ImportStrategy>(`importStrategy`) ?? 'fromEnvironment',
+      importStrategy: settings.get<string>('importStrategy', 'useBundled'),
+      showNotifications: settings.get<string>('showNotifications', 'off'),
+      extraPaths: [],
+      reportingScope: settings.get<string>('reportingScope', 'file'),
+      preferDaemon: settings.get<boolean>('preferDaemon', true),
     },
     settings: {},
   };
