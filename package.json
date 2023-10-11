@@ -90,7 +90,7 @@
         },
         "mypy-type-checker.useDmypy": {
           "type": "boolean",
-          "default": true,
+          "default": false,
           "description": "Use dmypy deamon mode as the linting command run by microsoft/vscode-mypy's language server."
         },
         "mypy-type-checker.builtin.pythonPath": {
