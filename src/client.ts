@@ -76,8 +76,8 @@ function convertFromWorkspaceConfigToInitializationOptions() {
       path: settings.get('path'),
       ignorePatterns: settings.get<string[]>('ignorePatterns', []),
       interpreter: settings.get('interpreter'),
-      //importStrategy: settings.get<ImportStrategy>(`importStrategy`) ?? 'fromEnvironment',
-      importStrategy: settings.get<string>('importStrategy', 'useBundled'),
+      // MEMO: In coc-mypy, importStrategy defaults to fromEnvironment. Does not work correctly with "useBundled"
+      importStrategy: settings.get<string>('importStrategy', 'fromEnvironment'),
       showNotifications: settings.get<string>('showNotifications', 'off'),
       extraPaths: [],
       reportingScope: settings.get<string>('reportingScope', 'file'),

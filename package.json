@@ -90,7 +90,7 @@
         },
         "mypy-type-checker.useDmypy": {
           "type": "boolean",
-          "default": false,
+          "default": true,
           "description": "Use dmypy deamon mode as the linting command run by microsoft/vscode-mypy's language server."
         },
         "mypy-type-checker.builtin.pythonPath": {
@@ -141,7 +141,7 @@
           "type": "array"
         },
         "mypy-type-checker.importStrategy": {
-          "default": "useBundled",
+          "default": "fromEnvironment",
           "markdownDescription": "Defines where `mypy` is imported from. This setting may be ignored if `mypy-type-checker.path` is set.",
           "enum": [
             "useBundled",
