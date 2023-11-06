@@ -54,6 +54,7 @@ type ExtensionInitializationOptions = {
     args: string[];
     severity: Record<string, string>;
     path: string[];
+    ignorePatterns: string[];
     interpreter: string[];
     importStrategy: string;
     showNotifications: string;
@@ -73,6 +74,7 @@ function convertFromWorkspaceConfigToInitializationOptions() {
       args: settings.get('args'),
       severity: settings.get<Record<string, string>>('severity', DEFAULT_SEVERITY),
       path: settings.get('path'),
+      ignorePatterns: settings.get<string[]>('ignorePatterns', []),
       interpreter: settings.get('interpreter'),
       //importStrategy: settings.get<ImportStrategy>(`importStrategy`) ?? 'fromEnvironment',
       importStrategy: settings.get<string>('importStrategy', 'useBundled'),
