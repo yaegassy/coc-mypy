@@ -1,5 +1,45 @@
 [
   {
+    "name": "v2024.2.0",
+    "zipball_url": "https://api.github.com/repos/microsoft/vscode-mypy/zipball/refs/tags/v2024.2.0",
+    "tarball_url": "https://api.github.com/repos/microsoft/vscode-mypy/tarball/refs/tags/v2024.2.0",
+    "commit": {
+      "sha": "99584c772af11c407ffe7bf45a34cb7051c6ecdb",
+      "url": "https://api.github.com/repos/microsoft/vscode-mypy/commits/99584c772af11c407ffe7bf45a34cb7051c6ecdb"
+    },
+    "node_id": "REF_kwDOJKkcQLNyZWZzL3RhZ3MvdjIwMjQuMi4w"
+  },
+  {
+    "name": "v2024.0.0",
+    "zipball_url": "https://api.github.com/repos/microsoft/vscode-mypy/zipball/refs/tags/v2024.0.0",
+    "tarball_url": "https://api.github.com/repos/microsoft/vscode-mypy/tarball/refs/tags/v2024.0.0",
+    "commit": {
+      "sha": "524653cee3a52a2299cf83d32d4569de898c2eca",
+      "url": "https://api.github.com/repos/microsoft/vscode-mypy/commits/524653cee3a52a2299cf83d32d4569de898c2eca"
+    },
+    "node_id": "REF_kwDOJKkcQLNyZWZzL3RhZ3MvdjIwMjQuMC4w"
+  },
+  {
+    "name": "v2023.6.0",
+    "zipball_url": "https://api.github.com/repos/microsoft/vscode-mypy/zipball/refs/tags/v2023.6.0",
+    "tarball_url": "https://api.github.com/repos/microsoft/vscode-mypy/tarball/refs/tags/v2023.6.0",
+    "commit": {
+      "sha": "ee003b6adc751aa9192d7defa05827fc376bd5e7",
+      "url": "https://api.github.com/repos/microsoft/vscode-mypy/commits/ee003b6adc751aa9192d7defa05827fc376bd5e7"
+    },
+    "node_id": "REF_kwDOJKkcQLNyZWZzL3RhZ3MvdjIwMjMuNi4w"
+  },
+  {
+    "name": "v2023.4.0",
+    "zipball_url": "https://api.github.com/repos/microsoft/vscode-mypy/zipball/refs/tags/v2023.4.0",
+    "tarball_url": "https://api.github.com/repos/microsoft/vscode-mypy/tarball/refs/tags/v2023.4.0",
+    "commit": {
+      "sha": "b9492bd99b83eca35a804b5dcaed918488dcab9f",
+      "url": "https://api.github.com/repos/microsoft/vscode-mypy/commits/b9492bd99b83eca35a804b5dcaed918488dcab9f"
+    },
+    "node_id": "REF_kwDOJKkcQLNyZWZzL3RhZ3MvdjIwMjMuNC4w"
+  },
+  {
     "name": "v2023.2.0",
     "zipball_url": "https://api.github.com/repos/microsoft/vscode-mypy/zipball/refs/tags/v2023.2.0",
     "tarball_url": "https://api.github.com/repos/microsoft/vscode-mypy/tarball/refs/tags/v2023.2.0",
