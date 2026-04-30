@@ -1,5 +1,145 @@
 [
   {
+    "name": "v2026.5.11171008",
+    "zipball_url": "https://api.github.com/repos/microsoft/vscode-mypy/zipball/refs/tags/v2026.5.11171008",
+    "tarball_url": "https://api.github.com/repos/microsoft/vscode-mypy/tarball/refs/tags/v2026.5.11171008",
+    "commit": {
+      "sha": "06e06d01ec30126c49b7aaa4f0aa666569e8c7b5",
+      "url": "https://api.github.com/repos/microsoft/vscode-mypy/commits/06e06d01ec30126c49b7aaa4f0aa666569e8c7b5"
+    },
+    "node_id": "REF_kwDOJKkcQLpyZWZzL3RhZ3MvdjIwMjYuNS4xMTE3MTAwOA"
+  },
+  {
+    "name": "v2026.4.0",
+    "zipball_url": "https://api.github.com/repos/microsoft/vscode-mypy/zipball/refs/tags/v2026.4.0",
+    "tarball_url": "https://api.github.com/repos/microsoft/vscode-mypy/tarball/refs/tags/v2026.4.0",
+    "commit": {
+      "sha": "1dccf9669001ba2324973ba324d553f0ef0f5d97",
+      "url": "https://api.github.com/repos/microsoft/vscode-mypy/commits/1dccf9669001ba2324973ba324d553f0ef0f5d97"
+    },
+    "node_id": "REF_kwDOJKkcQLNyZWZzL3RhZ3MvdjIwMjYuNC4w"
+  },
+  {
+    "name": "v2026.3.11041007",
+    "zipball_url": "https://api.github.com/repos/microsoft/vscode-mypy/zipball/refs/tags/v2026.3.11041007",
+    "tarball_url": "https://api.github.com/repos/microsoft/vscode-mypy/tarball/refs/tags/v2026.3.11041007",
+    "commit": {
+      "sha": "49d49555ea5363c3bff40745bfdae473c04a4a6b",
+      "url": "https://api.github.com/repos/microsoft/vscode-mypy/commits/49d49555ea5363c3bff40745bfdae473c04a4a6b"
+    },
+    "node_id": "REF_kwDOJKkcQLpyZWZzL3RhZ3MvdjIwMjYuMy4xMTA0MTAwNw"
+  },
+  {
+    "name": "v2026.3.11031008",
+    "zipball_url": "https://api.github.com/repos/microsoft/vscode-mypy/zipball/refs/tags/v2026.3.11031008",
+    "tarball_url": "https://api.github.com/repos/microsoft/vscode-mypy/tarball/refs/tags/v2026.3.11031008",
+    "commit": {
+      "sha": "56ef04effde80303f2726268dee665e648d18d91",
+      "url": "https://api.github.com/repos/microsoft/vscode-mypy/commits/56ef04effde80303f2726268dee665e648d18d91"
+    },
+    "node_id": "REF_kwDOJKkcQLpyZWZzL3RhZ3MvdjIwMjYuMy4xMTAzMTAwOA"
+  },
+  {
+    "name": "v2026.3.11001007",
+    "zipball_url": "https://api.github.com/repos/microsoft/vscode-mypy/zipball/refs/tags/v2026.3.11001007",
+    "tarball_url": "https://api.github.com/repos/microsoft/vscode-mypy/tarball/refs/tags/v2026.3.11001007",
+    "commit": {
+      "sha": "ad427783b37a5f1a78e93b7d8be5d142f3017e4b",
+      "url": "https://api.github.com/repos/microsoft/vscode-mypy/commits/ad427783b37a5f1a78e93b7d8be5d142f3017e4b"
+    },
+    "node_id": "REF_kwDOJKkcQLpyZWZzL3RhZ3MvdjIwMjYuMy4xMTAwMTAwNw"
+  },
+  {
+    "name": "v2026.3.10991007",
+    "zipball_url": "https://api.github.com/repos/microsoft/vscode-mypy/zipball/refs/tags/v2026.3.10991007",
+    "tarball_url": "https://api.github.com/repos/microsoft/vscode-mypy/tarball/refs/tags/v2026.3.10991007",
+    "commit": {
+      "sha": "34307ebea49399cb217c15d45bbe60a84128acce",
+      "url": "https://api.github.com/repos/microsoft/vscode-mypy/commits/34307ebea49399cb217c15d45bbe60a84128acce"
+    },
+    "node_id": "REF_kwDOJKkcQLpyZWZzL3RhZ3MvdjIwMjYuMy4xMDk5MTAwNw"
+  },
+  {
+    "name": "v2026.3.10981011",
+    "zipball_url": "https://api.github.com/repos/microsoft/vscode-mypy/zipball/refs/tags/v2026.3.10981011",
+    "tarball_url": "https://api.github.com/repos/microsoft/vscode-mypy/tarball/refs/tags/v2026.3.10981011",
+    "commit": {
+      "sha": "bfb0dd5d005ea547684bda2d5ed6d61048ba6265",
+      "url": "https://api.github.com/repos/microsoft/vscode-mypy/commits/bfb0dd5d005ea547684bda2d5ed6d61048ba6265"
+    },
+    "node_id": "REF_kwDOJKkcQLpyZWZzL3RhZ3MvdjIwMjYuMy4xMDk4MTAxMQ"
+  },
+  {
+    "name": "v2026.3.10841003",
+    "zipball_url": "https://api.github.com/repos/microsoft/vscode-mypy/zipball/refs/tags/v2026.3.10841003",
+    "tarball_url": "https://api.github.com/repos/microsoft/vscode-mypy/tarball/refs/tags/v2026.3.10841003",
+    "commit": {
+      "sha": "b56b793edde43f9f17e267d3fb47f3f6d1845d7b",
+      "url": "https://api.github.com/repos/microsoft/vscode-mypy/commits/b56b793edde43f9f17e267d3fb47f3f6d1845d7b"
+    },
+    "node_id": "REF_kwDOJKkcQLpyZWZzL3RhZ3MvdjIwMjYuMy4xMDg0MTAwMw"
+  },
+  {
+    "name": "v2026.3.10831007",
+    "zipball_url": "https://api.github.com/repos/microsoft/vscode-mypy/zipball/refs/tags/v2026.3.10831007",
+    "tarball_url": "https://api.github.com/repos/microsoft/vscode-mypy/tarball/refs/tags/v2026.3.10831007",
+    "commit": {
+      "sha": "76d19407060c25f31e01edd81b3b2db1fdc70a8d",
+      "url": "https://api.github.com/repos/microsoft/vscode-mypy/commits/76d19407060c25f31e01edd81b3b2db1fdc70a8d"
+    },
+    "node_id": "REF_kwDOJKkcQLpyZWZzL3RhZ3MvdjIwMjYuMy4xMDgzMTAwNw"
+  },
+  {
+    "name": "v2026.3.10821743",
+    "zipball_url": "https://api.github.com/repos/microsoft/vscode-mypy/zipball/refs/tags/v2026.3.10821743",
+    "tarball_url": "https://api.github.com/repos/microsoft/vscode-mypy/tarball/refs/tags/v2026.3.10821743",
+    "commit": {
+      "sha": "76d19407060c25f31e01edd81b3b2db1fdc70a8d",
+      "url": "https://api.github.com/repos/microsoft/vscode-mypy/commits/76d19407060c25f31e01edd81b3b2db1fdc70a8d"
+    },
+    "node_id": "REF_kwDOJKkcQLpyZWZzL3RhZ3MvdjIwMjYuMy4xMDgyMTc0Mw"
+  },
+  {
+    "name": "v2025.3.10821007",
+    "zipball_url": "https://api.github.com/repos/microsoft/vscode-mypy/zipball/refs/tags/v2025.3.10821007",
+    "tarball_url": "https://api.github.com/repos/microsoft/vscode-mypy/tarball/refs/tags/v2025.3.10821007",
+    "commit": {
+      "sha": "ffd468569cc0513aeb3f7943c1f32a313b0641d5",
+      "url": "https://api.github.com/repos/microsoft/vscode-mypy/commits/ffd468569cc0513aeb3f7943c1f32a313b0641d5"
+    },
+    "node_id": "REF_kwDOJKkcQLpyZWZzL3RhZ3MvdjIwMjUuMy4xMDgyMTAwNw"
+  },
+  {
+    "name": "v2025.3.10771007",
+    "zipball_url": "https://api.github.com/repos/microsoft/vscode-mypy/zipball/refs/tags/v2025.3.10771007",
+    "tarball_url": "https://api.github.com/repos/microsoft/vscode-mypy/tarball/refs/tags/v2025.3.10771007",
+    "commit": {
+      "sha": "8d25a358ce44985bb17d99d585bf96bf2ac00277",
+      "url": "https://api.github.com/repos/microsoft/vscode-mypy/commits/8d25a358ce44985bb17d99d585bf96bf2ac00277"
+    },
+    "node_id": "REF_kwDOJKkcQLpyZWZzL3RhZ3MvdjIwMjUuMy4xMDc3MTAwNw"
+  },
+  {
+    "name": "v2025.3.10651007",
+    "zipball_url": "https://api.github.com/repos/microsoft/vscode-mypy/zipball/refs/tags/v2025.3.10651007",
+    "tarball_url": "https://api.github.com/repos/microsoft/vscode-mypy/tarball/refs/tags/v2025.3.10651007",
+    "commit": {
+      "sha": "01d489108119762cae109ea305ff8c16f7a6ab90",
+      "url": "https://api.github.com/repos/microsoft/vscode-mypy/commits/01d489108119762cae109ea305ff8c16f7a6ab90"
+    },
+    "node_id": "REF_kwDOJKkcQLpyZWZzL3RhZ3MvdjIwMjUuMy4xMDY1MTAwNw"
+  },
+  {
+    "name": "v2025.3.10551936",
+    "zipball_url": "https://api.github.com/repos/microsoft/vscode-mypy/zipball/refs/tags/v2025.3.10551936",
+    "tarball_url": "https://api.github.com/repos/microsoft/vscode-mypy/tarball/refs/tags/v2025.3.10551936",
+    "commit": {
+      "sha": "32b4a176abbaf22b2b60225f5b056184c0526be9",
+      "url": "https://api.github.com/repos/microsoft/vscode-mypy/commits/32b4a176abbaf22b2b60225f5b056184c0526be9"
+    },
+    "node_id": "REF_kwDOJKkcQLpyZWZzL3RhZ3MvdjIwMjUuMy4xMDU1MTkzNg"
+  },
+  {
     "name": "v2025.2.0",
     "zipball_url": "https://api.github.com/repos/microsoft/vscode-mypy/zipball/refs/tags/v2025.2.0",
     "tarball_url": "https://api.github.com/repos/microsoft/vscode-mypy/tarball/refs/tags/v2025.2.0",
