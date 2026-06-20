@@ -16,3 +16,5 @@ venv
 .venv
 _config.yml
 resources
+.claude
+.vim
