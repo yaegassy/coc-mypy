@@ -30,35 +30,31 @@
   "scripts": {
     "tags-get": "curl -o resources/vscode-mypy-tags.json https://api.github.com/repos/microsoft/vscode-mypy/tags",
     "tags-check": "node scripts/upstream-tags-check.mjs",
-    "lint": "eslint src --ext ts",
     "clean": "rimraf lib",
     "watch": "node esbuild.js --watch",
     "build": "node esbuild.js",
-    "prepare": "node esbuild.js"
-  },
-  "prettier": {
-    "singleQuote": true,
-    "printWidth": 120,
-    "semi": true
+    "prepare": "node esbuild.js",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome lint src/",
+    "lint:fix": "biome lint --write src/",
+    "format": "biome format src/",
+    "format:fix": "biome format --write src/",
+    "check": "biome check src/",
+    "check:fix": "biome check --write src/"
   },
   "devDependencies": {
-    "@types/node": "^18.17.2",
+    "@biomejs/biome": "2.5.0",
+    "@types/node": "^22",
     "@types/node-fetch": "^2.6.2",
     "@types/rimraf": "^3.0.2",
     "@types/which": "^2.0.1",
-    "@typescript-eslint/eslint-plugin": "^6.2.1",
-    "@typescript-eslint/parser": "^6.2.1",
     "coc.nvim": "^0.0.82",
     "esbuild": "^0.16.17",
-    "eslint": "^8.46.0",
-    "eslint-config-prettier": "^8.8.0",
-    "eslint-plugin-prettier": "^4.2.1",
     "fflate": "^0.8.3",
     "https-proxy-agent": "^5.0.1",
     "node-fetch": "^2.6.7",
-    "prettier": "^2.8.8",
     "rimraf": "^3.0.2",
-    "typescript": "^5.1.6",
+    "typescript": "^5.7.3",
     "which": "^3.0.0"
   },
   "activationEvents": [
