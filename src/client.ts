@@ -107,9 +107,9 @@ async function getInitializationOptions(context: ExtensionContext) {
 
   // **MEMO**:
   //
-  // The current default for microsoft/vscode-mypy's langauge server is to use dmypy.
+  // The current default for microsoft/vscode-mypy's language server is to use dmypy.
   //
-  // microsoft/vscode-mypy's langauge server uses mypy by specifying the mypy
+  // microsoft/vscode-mypy's language server uses mypy by specifying the mypy
   // command path in the `mypy-type-checker.path` configuration.
   if (!workspace.getConfiguration(EXTENSION_NS).get('useDmypy')) {
     if (initializationOptions.globalSettings.path.length === 0) {

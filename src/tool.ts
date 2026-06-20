@@ -1,10 +1,9 @@
+import child_process from 'child_process';
 import { ExtensionContext, workspace } from 'coc.nvim';
-
 import fs from 'fs';
 import path from 'path';
-import which from 'which';
-import child_process from 'child_process';
 import util from 'util';
+import which from 'which';
 
 const exec = util.promisify(child_process.exec);
 
@@ -26,7 +25,7 @@ export function getPythonEnvPath(): string {
   return pythonPath;
 }
 
-export function getPythonBultinInstallPath(): string {
+export function getPythonBuiltinInstallPath(): string {
   let pythonPath = workspace.getConfiguration(EXTENSION_NS).get<string>('builtin.pythonPath', '');
   if (pythonPath) {
     return pythonPath;
@@ -52,7 +51,7 @@ export async function existsPythonImportModule(pythonPath: string, moduleName: s
   try {
     await exec(checkCmd);
     return true;
-  } catch (error) {
+  } catch (_error) {
     return false;
   }
 }

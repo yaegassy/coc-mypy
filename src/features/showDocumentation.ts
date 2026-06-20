@@ -54,6 +54,7 @@ class ShowDocumentationCodeActionProvider implements CodeActionProvider {
   public async provideCodeActions(document: TextDocument, range: Range, context: CodeActionContext) {
     const doc = workspace.getDocument(document.uri);
     const wholeRange = Range.create(0, 0, doc.lineCount, 0);
+    // biome-ignore lint/correctness/noUnusedVariables: kept intentionally for whole-document range detection
     let whole = false;
     if (
       range.start.line === wholeRange.start.line &&
@@ -61,7 +62,6 @@ class ShowDocumentationCodeActionProvider implements CodeActionProvider {
       range.end.line === wholeRange.end.line &&
       range.end.character === wholeRange.end.character
     ) {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       whole = true;
     }
     const codeActions: CodeAction[] = [];
